@@ -8,6 +8,7 @@ from restapi import models, serializers
 class ExpenseListCreate(ListCreateAPIView):
     serializer_class = serializers.Expense
     queryset = models.Expense.objects.all()
+    filterset_fields = ["category", "merchant"]
 
 
 class ExpenseRetrieveDelete(RetrieveDestroyAPIView):
